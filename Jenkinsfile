@@ -1,5 +1,3 @@
-nes (27 sloc)  948 Bytes
-   
 node {
   stage('SCM') {
     //deleteDir()
