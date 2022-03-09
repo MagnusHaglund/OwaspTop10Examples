@@ -14,9 +14,9 @@ node {
       //bat "MSBuild.exe /t:Rebuild"
       //bat "C:\\Tools\\sonar-scanner-4.6.2.2472\\bin\\sonar-scanner.bat end"
       //bat "C:\\Tools\\sonar-scanner-msbuild-5.5.3.43281-net46\\SonarScanner.MSBuild.exe end"
-      dotnet C:\\Tools\\sonar-scanner-msbuild-5.5.3.43281-netcoreapp2.0\\SonarScanner.MSBuild.dll begin /k:"DepTrackSonarQubeDEMO"
+      dotnet C:/Tools/sonar-scanner-msbuild-5.5.3.43281-netcoreapp2.0/SonarScanner.MSBuild.dll begin /k:"DepTrackSonarQubeDEMO"
       dotnet build Blog.sln
-      dotnet C:\\Tools\\sonar-scanner-msbuild-5.5.3.43281-netcoreapp2.0\\SonarScanner.MSBuild.dll end
+      dotnet C:/Tools/sonar-scanner-msbuild-5.5.3.43281-netcoreapp2.0/SonarScanner.MSBuild.dll end
     }
   }
   stage ('Generating Software Bill of Materials') {
