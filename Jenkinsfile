@@ -19,6 +19,6 @@ node {
     bat "dotnet CycloneDX Blog.sln -o ."
   }
   stage('dependencyTrackPublisher') {
-    dependencyTrackPublisher artifact: 'bom.xml', projectId: 'e23b62c2-fc91-4572-8185-0234bd7220e6', synchronous: true
+    dependencyTrackPublisher artifact: 'bom.xml', projectId: '123530a3-16ef-4629-ac6d-dcac3ba6514c', synchronous: true
   }
 }
