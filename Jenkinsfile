@@ -17,9 +17,9 @@ node {
       //dotnet "C:/Tools/sonar-scanner-msbuild-5.5.3.43281-netcoreapp2.0/SonarScanner.MSBuild.dll" begin /k:"DepTrackSonarQubeDEMO"
       //dotnet build Blog.sln
       //dotnet "C:/Tools/sonar-scanner-msbuild-5.5.3.43281-netcoreapp2.0/SonarScanner.MSBuild.dll" end
-      dotnet sonarscanner begin /k:"DepTrackSonarQubeDEMO"
-      dotnet build Blog.sln
-      dotnet sonarscanner end
+      bat "dotnet sonarscanner begin /k:\"DepTrackSonarQubeDEMO\""
+      bat "dotnet build Blog.sln"
+      bat "dotnet sonarscanner end"
     //}
     
   }
