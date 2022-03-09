@@ -6,14 +6,12 @@ node {
   stage('Restore Packages') {
     bat "dotnet restore Blog/Blog.csproj"
   }
-  stage('SonarQube Analysis') {
-    def msbuildHome = tool 'Default MSBuild'
-    def scannerHome = tool 'SonarScanner for MSBuild'
+  stage('SonarQube Analysis') {  
     withSonarQubeEnv() {
-      bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" begin /k:\"Demo2\""
-      bat "\"${msbuildHome}\\MSBuild.exe\" /t:restore"
-      bat "\"${msbuildHome}\\MSBuild.exe\" /t:Rebuild"
-      bat "\"${scannerHome}\\SonarScanner.MSBuild.exe\" end"
+      bat "dotnet-sonarscanner begin /k:\"Demo2\""
+      bat "MSBuild.exe /t:restore"
+      bat "MSBuild.exe /t:Rebuild"
+      bat "dotnet-sonarscanner end"
     }
   }
   stage ('Generating Software Bill of Materials') {
