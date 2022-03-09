@@ -8,7 +8,7 @@ node {
   }
   stage('SonarQube Analysis') {  
     withSonarQubeEnv() {
-      bat "dotnet-sonarscanner begin /k:\"Demo2\""
+      bat "dotnet-sonarscanner begin /k:\"DepTrackSonarQubeDEMO\""
       bat "MSBuild.exe /t:restore"
       bat "MSBuild.exe /t:Rebuild"
       bat "dotnet-sonarscanner end"
