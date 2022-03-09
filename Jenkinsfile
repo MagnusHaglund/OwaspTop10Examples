@@ -8,10 +8,9 @@ node {
   }
   stage('SonarQube Analysis') {  
     withSonarQubeEnv() {
-      bat "dotnet-sonarscanner begin /k:\"DepTrackSonarQubeDEMO\""
-      bat "MSBuild.exe /t:restore"
+      bat "C:\\Tools\\sonar-scanner-4.6.2.2472\\bin\\sonar-scanner.bat begin /k:\"DepTrackSonarQubeDEMO\""
       bat "MSBuild.exe /t:Rebuild"
-      bat "dotnet-sonarscanner end"
+      bat "C:\\Tools\\sonar-scanner-4.6.2.2472\\bin\\sonar-scanner.bat end"
     }
   }
   stage ('Generating Software Bill of Materials') {
