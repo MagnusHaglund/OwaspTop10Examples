@@ -7,7 +7,7 @@ node {
     bat "dotnet restore Blog/Blog.csproj"
   }
   stage('SonarQube Analysis') {  
-    withSonarQubeEnv() {
+    //withSonarQubeEnv() {
       //bat "C:\\Tools\\sonar-scanner-4.6.2.2472\\bin\\sonar-scanner.bat begin /k:\"DepTrackSonarQubeDEMO\""
       //bat "SonarQube.Scanner.MSBuild.exe begin /k:\"DepTrackSonarQubeDEMO\""
       //bat "C:\\Tools\\sonar-scanner-msbuild-5.5.3.43281-net46\\SonarScanner.MSBuild.exe begin /k:\"DepTrackSonarQubeDEMO\""
@@ -20,7 +20,7 @@ node {
       dotnet sonarscanner begin /k:"DepTrackSonarQubeDEMO"
       dotnet build Blog.sln
       dotnet sonarscanner end
-    }
+    //}
     
   }
   stage ('Generating Software Bill of Materials') {
