@@ -8,15 +8,9 @@ node {
   }
   stage('SonarQube Analysis') {  
     //withSonarQubeEnv() {
-      //bat "C:\\Tools\\sonar-scanner-4.6.2.2472\\bin\\sonar-scanner.bat begin /k:\"DepTrackSonarQubeDEMO\""
-      //bat "SonarQube.Scanner.MSBuild.exe begin /k:\"DepTrackSonarQubeDEMO\""
-      //bat "C:\\Tools\\sonar-scanner-msbuild-5.5.3.43281-net46\\SonarScanner.MSBuild.exe begin /k:\"DepTrackSonarQubeDEMO\""
+      //bat "SonarScanner.MSBuild.exe begin /k:\"DepTrackSonarQubeDEMO\""
       //bat "MSBuild.exe /t:Rebuild"
-      //bat "C:\\Tools\\sonar-scanner-4.6.2.2472\\bin\\sonar-scanner.bat end"
-      //bat "C:\\Tools\\sonar-scanner-msbuild-5.5.3.43281-net46\\SonarScanner.MSBuild.exe end"
-      //dotnet "C:/Tools/sonar-scanner-msbuild-5.5.3.43281-netcoreapp2.0/SonarScanner.MSBuild.dll" begin /k:"DepTrackSonarQubeDEMO"
-      //dotnet build Blog.sln
-      //dotnet "C:/Tools/sonar-scanner-msbuild-5.5.3.43281-netcoreapp2.0/SonarScanner.MSBuild.dll" end
+      //bat "SonarScanner.MSBuild.exe end"
       bat "dotnet sonarscanner begin /k:\"DepTrackSonarQubeDEMO\""
       bat "dotnet build Blog.sln"
       bat "dotnet sonarscanner end"
